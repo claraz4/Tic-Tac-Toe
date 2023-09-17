@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-size: 16px;
+    font-family: "Open Sans";
+}
+
+:root {
+    --player-1: #3e3ef1;
+    --player-2: #e24141;
+    --dark-grey: #434343;
+}
+
+.app--container {
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-evenly;
+}
+
+.color--player1 {
+    color: var(--player-1);
+}
+
+.color--player2 {
+    color: var(--player-2);
+}
+
+.dark-grey {
+    color: var(--dark-grey);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+/* Cells and Grid */
+.grid--container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 35vw;
+    height: 450px;
+}
+
+.cell {
+    border: var(--dark-grey) solid 2px;
+    font-weight: 400;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top-left-cell {
+    border-left: 0;
+    border-top: 0;
+}
+
+#top-middle-cell {
+    border-top: 0;
+}
+
+#top-right-cell {
+    border-right: 0;
+    border-top: 0;
+}
+
+#middle-left-cell {
+    border-left: 0;
+}
+
+#middle-right-cell {
+    border-right: 0;
+}
+
+#bottom-left-cell {
+    border-left: 0;
+    border-bottom: 0;
+}
+
+#bottom-middle-cell {
+    border-bottom: 0;
+}
+
+#bottom-right-cell {
+    border-right: 0;
+    border-bottom: 0;
+}
+
+
+/* Player Score */
+.player--score-text {
+    margin-top: 70px;
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+.player--score-no {
+    font-size: 2.4rem;
+}
+
+.active-red {
+    background-color: rgba(226, 65, 65, 0.1);
+}
+
+.active-blue {
+    background-color: rgba(62, 62, 241, 0.1);
+}
+
+
+/* End of the game */
+.endgame--container {
+    position: absolute;
+    top: 21.7%;
+    background-color: rgba(129, 128, 128, 0.7);
+    width: 300px;
+    height: 250px;
+    padding: 20px 20px 0 20px;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 5px 5px 4px rgba(0,0,0,0.04);
+    animation: moveBox 1s ease-in-out;
+}
+
+@keyframes moveBox {
+    0% {
+        transform: translateY(550px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.endgame--container > button {
+    background-color: white;
+    width: 150px;
+    height: 70px;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    font-family: "Open Sans";
+    font-size: 1.2rem;
+    letter-spacing: 0.7px;
+    font-weight: 500;
+    color: var(--dark-grey);
+    cursor: pointer;
+}
+
+
+.winner--result {
+    margin-top: 7px;
+    font-size: 1.2rem;
+}
+
+.player--container {
+    width: 22.5vw;
+}
+
+.player--container,
+.player--input-container,
+.player--info,
+.player--score,
+.endgame--container,
+.grid--container-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player--info,
+.player--score,
+.endgame--container,
+.grid--container-results {
+    align-items: center;
+}
+
+.player--textbox {
+    font-size: 16px;
+    font-family: "Open Sans";
+    padding: 7px;
+    border-radius: 5px;
+    border: gray solid 1px;
+    margin-bottom: 20px;
+}
+
+.player--player-button {
+    font-size: 16px;
+    font-family: "Open Sans";
+    padding: 8px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.blue-button {
+    background-color: var(--player-1);
+}
+
+.blue-button:hover {
+    background-color: #3232ca;
+}
+
+.red-button {
+    background-color: var(--player-2);
+}
+
+.red-button:hover {
+    background-color: #c83939;
+}
+
+.player--name {
+    margin: 0;
+    font-size: 1.7rem;
+}
