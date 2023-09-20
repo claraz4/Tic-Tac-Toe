@@ -21,8 +21,7 @@ export default function Winner(props) {
         if (winner !== "none") {
             setWins(prevWins => {
                 return prevWins.map((score, idx) => {
-                    // It is rendering twice; by adding 0.5 twice, we will be adding 1 points to the winning user
-                    return idx === playerNo ? score + 0.5 : score
+                    return idx === playerNo ? score + 1 : score
                 })
             })
         }
