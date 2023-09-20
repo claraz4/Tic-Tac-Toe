@@ -21,7 +21,7 @@ export default function Winner(props) {
         if (winner !== "none") {
             setWins(prevWins => {
                 return prevWins.map((score, idx) => {
-                    return idx === playerNo ? score + 0.5 : score
+                    return idx === playerNo ? score + 1 : score
                 })
             })
         }
